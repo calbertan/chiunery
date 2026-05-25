@@ -1,0 +1,53 @@
+{
+  "name": "Pajo's Fish & Chips Restaurant",
+  "description": "Since 1985, Pajo's Fish & Chips Restaurant has become a favourite among <b>locals and tourists in Vancouver</b>. Not only famous for fish & chips, each Pajo's location offers breathtaking views, including an iconic floating restaurant in Steveston, BC.",
+  "cover": "Pajo_s Behance Thumbnail.png",
+  "fields": "Environmental Graphic | Digital Marketing | Photography",
+  "modules": [
+    {
+      "type": "image",
+      "src": "Pajo_s Behance 0.jpg"
+    },
+    {
+      "type": "text",
+      "content": "<b>CHALLENGE</b> \n <p>How to expand Pajo's Fish and Chips' branding from its digital marketing to restaurant environment?</p>"
+    },
+    {
+      "type": "image",
+      "src": "Pajo_s Behance 1.jpg"
+    },
+    {
+      "type": "image",
+      "src": "Pajo_s Behance 2.jpg"
+    },
+    {
+      "type": "text",
+      "content": "<b>SOLUTION</b> \n <p>Create a recognisable look by repurposing social media template and graphic assets. This approach ensured a consistent brand identity in-store (signage, hot stamp, uniform, etc.). In addition, initiate new photography sessions to keep Pajos' content relevant.</p>"
+    },
+    {
+      "type": "image",
+      "src": "Pajo_s Behance Tshirt.png"
+    },
+    {
+      "type": "image",
+      "src": "Pajo_s Behance 4.jpg"
+    },
+    {
+      "type": "image",
+      "src": "Pajo_s Behance 6.jpg"
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "title": "Photography",
+          "items": ["Jesslyn Chiunardy", "Thanh Nhan Pham"]
+        },
+        {
+          "title": "Made With",
+          "items": ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign"]
+        }
+      ]
+    }
+  ]
+}

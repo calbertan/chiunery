@@ -1,0 +1,41 @@
+{
+  "name": "Best Buy's Mario Day Digital Signage",
+  "description": "Every March 10th, Nintendo celebrates MAR10 Day with special offers. For Best Buy Canada, the challenge was standing out in a crowd playing with the exact same cards.",
+  "cover": "Mario Day Thumbnail.png",
+  "fields": "Motion Graphics",
+  "modules": [
+    {
+      "type": "gif",
+      "src": "Mario_No-Fade.gif"
+    },
+    {
+      "type": "text",
+      "content": "<b>CHALLENGE</b> \n <p>When every competitor receives the exact same Nintendo files, how do you make Best Buy Canada's version the one people actually stop for?</p>"
+    },
+    {
+      "type": "video",
+      "url": "https://vimeo.com/1180720271?fl=pl&fe=vl"
+    },
+    {
+      "type": "text",
+      "content": "<b>SOLUTION</b> \n <p>Subtle motion graphics breathed life into the static Nintendo files, eye-catching without overpowering the brand. Best Buy Canada's promo templates were seamless and bilingual specs were tailored individually for each store location.</p>"
+    },
+    {
+      "type": "image",
+      "src": "Mario Mockup.png"
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "title": "Credit",
+          "items": ["Assets belong to Nintendo"]
+        },
+        {
+          "title": "Made With",
+          "items": ["Adobe After Effects"]
+        }
+      ]
+    }
+  ]
+}

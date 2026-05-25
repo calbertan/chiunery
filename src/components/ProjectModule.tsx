@@ -1,74 +1,112 @@
 import Image from "next/image";
-import type { BehanceModule } from "@/types/behance";
+import { imgPath } from "@/lib/utils";
+import type { ProjectModule as Module } from "@/types/project";
 
 interface ProjectModuleProps {
-  module: BehanceModule;
+  module: Module;
+  slug: string;
 }
 
-export default function ProjectModule({ module }: ProjectModuleProps) {
-  switch (module.type) {
-    case "image":
-      if (!module.src) return null;
-      return (
-        <div className="w-full">
-          <div className="relative w-full" style={{ aspectRatio: module.width && module.height ? `${module.width}/${module.height}` : "16/9" }}>
-            <Image
-              src={module.src}
-              alt=""
-              fill
-              className="object-contain"
-              sizes="(max-width: 1440px) 100vw, 1440px"
-            />
-          </div>
-        </div>
-      );
+function vimeoEmbedUrl(url: string): string {
+  const match = url.match(/vimeo\.com\/(\d+)/);
+  const id = match?.[1];
+  return id ? `https://player.vimeo.com/video/${id}?autoplay=0&title=0&byline=0&portrait=0` : url;
+}
 
-    case "text":
-      if (!module.text) return null;
-      return (
-        <div
-          className="prose prose-secondary max-w-none px-8 md:px-16 py-6 text-secondary"
-          dangerouslySetInnerHTML={{ __html: module.text }}
+export default function ProjectModule({ module, slug }: ProjectModuleProps) {
+  if (module.type === "image") {
+    return (
+      <div className="px-8 md:px-16">
+        <Image
+          src={imgPath(slug, module.src)}
+          alt=""
+          width={800}
+          height={600}
+          style={{ width: "100%", height: "auto" }}
+          sizes="(max-width: 800px) 100vw, 800px"
         />
-      );
-
-    case "media_collection":
-      if (!module.components?.length) return null;
-      return (
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {module.components.map((component, i) => (
-            <div
-              key={i}
-              className="relative"
-              style={{ aspectRatio: component.width && component.height ? `${component.width}/${component.height}` : "4/3" }}
-            >
-              <Image
-                src={component.src}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          ))}
-        </div>
-      );
-
-    case "embed":
-      if (!module.url) return null;
-      return (
-        <div className="w-full px-8 md:px-16 py-6">
-          <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              src={module.url}
-              className="absolute inset-0 w-full h-full border-0"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      );
-
-    default:
-      return null;
+      </div>
+    );
   }
+
+  if (module.type === "gif") {
+    return (
+      <div className="px-8 md:px-16">
+        <Image
+          src={imgPath(slug, module.src)}
+          alt=""
+          width={800}
+          height={600}
+          unoptimized
+          style={{ width: "100%", height: "auto" }}
+          sizes="(max-width: 800px) 100vw, 800px"
+        />
+      </div>
+    );
+  }
+
+  if (module.type === "images") {
+    return (
+      <div className="px-8 md:px-16 grid grid-cols-1 md:grid-cols-2">
+        {module.srcs.map((src, i) => (
+          <Image
+            key={i}
+            src={imgPath(slug, src)}
+            alt=""
+            width={400}
+            height={300}
+            style={{ width: "100%", height: "auto" }}
+            sizes="(max-width: 768px) 100vw, 400px"
+          />
+        ))}
+      </div>
+    );
+  }
+
+  if (module.type === "video") {
+    return (
+      <div className="px-8 md:px-16 py-4">
+        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+          <iframe
+            src={vimeoEmbedUrl(module.url)}
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (module.type === "columns") {
+    return (
+      <div className="px-8 md:px-16 py-10 flex flex-wrap gap-10">
+        {module.columns.map((col, i) => (
+          <div key={i}>
+            <p className="text-xs tracking-widest uppercase text-secondary/40 mb-3">
+              {col.title}
+            </p>
+            <ul className="space-y-1">
+              {col.items.map((item, j) => (
+                <li key={j} className="text-sm text-secondary/70">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (module.type === "text") {
+    return (
+      <div
+        className="prose max-w-none px-8 md:px-16 py-8 text-secondary"
+        dangerouslySetInnerHTML={{ __html: module.content }}
+      />
+    );
+  }
+
+  return null;
 }

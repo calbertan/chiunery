@@ -3,15 +3,20 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-interface HeroSectionProps {
-  name: string;
-  headings: string[];
-  heroImage: string;
-}
+const heroConfig = {
+  name: "Jesslyn Chiunardy",
+  headings: [
+    "Graphic Designer",
+    "Illustrator",
+  ],
+  heroImage: "/Chiunery Web Banner.png",
+};
 
-export default function HeroSection({ name, headings, heroImage }: HeroSectionProps) {
+export default function HeroSection() {
+  const { name, headings, heroImage } = heroConfig;
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [textOpacity, setTextOpacity] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,8 +29,17 @@ export default function HeroSection({ name, headings, heroImage }: HeroSectionPr
     return () => clearInterval(interval);
   }, [headings.length]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const fadeOver = window.innerHeight * 0.4;
+      setTextOpacity(Math.max(0, 1 - window.scrollY / fadeOver));
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-full w-full overflow-hidden">
       <Image
         src={heroImage}
         alt="Hero background"
@@ -33,19 +47,22 @@ export default function HeroSection({ name, headings, heroImage }: HeroSectionPr
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-secondary/60" />
-
-      <div className="absolute inset-0 flex items-end">
-        <div className="w-full max-w-[1440px] mx-auto px-8 md:px-16 pb-16 md:pb-24">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-bg leading-none tracking-tight">
-            {name}
-          </h1>
-          <p
-            className="mt-4 text-2xl md:text-3xl font-light text-primary transition-opacity duration-400"
-            style={{ opacity: visible ? 1 : 0 }}
-          >
-            {headings[index]}
-          </p>
+      <div
+        className="absolute inset-0 flex items-center justify-center"
+        style={{ opacity: textOpacity }}
+      >
+        <div className="w-full max-w-360 mx-auto px-8 md:px-16 flex flex-col items-center">
+          <div className="w-full text-center md:w-fit md:text-left">
+            <h1 className="text-6xl md:text-6xl font-bold text-black leading-none tracking-tight">
+              {name}
+            </h1>
+            <p
+              className="ml-1 mt-1 text-2xl md:text-2xl font-light text-primary"
+              style={{ opacity: visible ? 1 : 0, transition: "opacity 0.4s" }}
+            >
+              {headings[index]}
+            </p>
+          </div>
         </div>
       </div>
     </section>
