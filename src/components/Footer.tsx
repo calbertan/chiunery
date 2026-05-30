@@ -3,10 +3,10 @@ import { MdOutlineEmail } from "react-icons/md";
 import type { IconType } from "react-icons";
 
 const socials: { label: string; icon: IconType; href: string }[] = [
-  { label: "Behance",   icon: FaBehance,      href: "https://behance.net/" },
-  { label: "LinkedIn",  icon: FaLinkedinIn,   href: "https://linkedin.com/in/" },
-  { label: "Instagram", icon: FaInstagram,    href: "https://instagram.com/" },
-  { label: "Email",     icon: MdOutlineEmail, href: "mailto:you@example.com" },
+  { label: "Behance",   icon: FaBehance,      href: "https://www.behance.net/chiunery/" },
+  { label: "LinkedIn",  icon: FaLinkedinIn,   href: "https://www.linkedin.com/in/jesslyn-chiunardy" },
+  { label: "Instagram", icon: FaInstagram,    href: "https://instagram.com/chiunery/" },
+  { label: "Email",     icon: MdOutlineEmail, href: "mailto:chiunery@gmail.com" },
 ];
 
 export default function Footer() {
