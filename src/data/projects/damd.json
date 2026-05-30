@@ -1,0 +1,45 @@
+{
+  "name": "BCIT Digital Arts, Media, and Design (DAMD) Mural",
+  "description": "BCIT's Design, Art, and Media department invited students to leave their mark on an Interior Space Design Project centered on creative connection. The theme: every discipline overlaps; every person belongs to something larger than their own work.",
+  "cover": "DAMD Mural Mockup.png",
+  "fields": "Illustration",
+  "modules": [
+    {
+      "type": "image",
+      "src": "DAMD Mural Mockup.png"
+    },
+      {
+        "type": "text",
+        "content": "<b>CHALLENGE</b> \n <p>How do you represent the full breadth of the creative industry without flattening what makes each discipline unique? How do you show that every student, every program, is part of one bigger picture?</p>"
+      },
+    {
+      "type": "image",
+      "src": "DAMD Mural Sketch.png"
+    },
+    {
+      "type": "text",
+      "content": "<b>SOLUTION</b> \n <p>Every DAMD program was mapped to a symbol or tool native to its craft. Wirefgrames for New Media, 3D prints for 3D Modelling, and so on. The concept came naturally; being a Bachelor of Creative Industries student made this topic personal.</p>"
+    },
+    {
+      "type": "image",
+      "src": "DAMD Technical Drawing.png"
+    },
+    {
+      "type": "image",
+      "src": "DAMD Programs.png"
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "title": "Credit",
+          "items": ["Logo belong to BCIT and the DAMD department"]
+        },
+        {
+          "title": "Made With",
+          "items": ["Adobe Illustrator"]
+        }
+      ]
+    }
+  ]
+}

@@ -31,7 +31,7 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-bg">
       {/* Header */}
-      <div className="max-w-200 mx-auto px-8 md:px-16 pt-12 pb-10">
+      <div className="max-w-250 mx-auto px-8 md:px-16 pt-12 pb-10">
         {project.fields && (
           <p className="text-sm text-secondary/50 tracking-widest uppercase mb-3">
             {project.fields}
@@ -42,14 +42,14 @@ export default async function ProjectPage({ params }: PageProps) {
         </h1>
         {project.description && (
           <p
-            className="mt-4 text-base md:text-lg text-secondary/60 max-w-2xl leading-relaxed"
+            className="mt-4 text-base md:text-xl text-secondary/60 max-w-4xl leading-relaxed"
             dangerouslySetInnerHTML={{ __html: project.description }}
           />
         )}
       </div>
 
       {/* Modules */}
-      <div className="max-w-200 mx-auto pb-24">
+      <div className="max-w-250 mx-auto pb-24">
         {project.modules.map((module, i) => (
           <ProjectModule key={i} slug={project.slug} module={module} />
         ))}
@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </div>
       )}
       {otherProjects.length > 0 && (
-        <div className="max-w-200 mx-auto px-8 md:px-16 pb-24">
+        <div className="max-w-250 mx-auto px-8 md:px-16 pb-24">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {otherProjects.map((p) => (
               <ProjectCard key={p.slug} project={p} rounded />

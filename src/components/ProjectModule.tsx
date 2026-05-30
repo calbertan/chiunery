@@ -82,7 +82,7 @@ export default function ProjectModule({ module, slug }: ProjectModuleProps) {
     return (
       <div className="px-8 md:px-16 py-10 flex flex-wrap gap-10">
         {module.columns.map((col, i) => (
-          <div key={i}>
+          <div key={i} className="flex-1 min-w-0">
             <p className="text-xs tracking-widest uppercase text-secondary/40 mb-3">
               {col.title}
             </p>
