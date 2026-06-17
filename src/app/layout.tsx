@@ -10,8 +10,11 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Portfolio website",
+  title: "Jesslyn Chiunardy",
+  description: "Jesslyn Chiunardy's Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

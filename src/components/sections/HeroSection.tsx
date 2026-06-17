@@ -7,7 +7,7 @@ const heroConfig = {
   name: "Jesslyn Chiunardy",
   headings: [
     "Graphic Designer",
-    "Illustrator",
+    "Experiential Marketing",
   ],
   heroImage: "/Chiunery Web Banner.png",
 };
