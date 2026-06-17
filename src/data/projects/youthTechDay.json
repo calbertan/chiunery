@@ -1,0 +1,45 @@
+{
+  "name": "Best Buy's Youth Tech Day 2024",
+  "description": "Best Buy Canada's Youth Tech Day brings STEM to life for kids aged 10–16 through free, hands-on workshops at Vancouver's Robson Square, from robotics to digital music. The 2024 event brought Geek Squad Academy and big names like Microsoft and Nintendo to the floor.",
+  "cover": "Thumbnail.png",
+  "fields": "Signage and Wayfinding",
+  "modules": [
+    {
+      "type": "image",
+      "src": "BBY YTD 2.png"
+    },
+    {
+      "type": "text",
+      "content": "<b>CHALLENGE</b> \n <p>How do you make Geek Squad the most recognizable presence in a room full of big brands?</p>"
+    },
+    {
+      "type": "image",
+      "src": "BBY YTD 3.png"
+    },
+    {
+      "type": "text",
+      "content": "<b>SOLUTION</b> \n <p>Following the Geek Squad spec sheet, the brand was applied across flag banners, tabletop displays, floor wayfinding, and roll-up banners. Every format told the same visual story, making Geek Squad impossible to miss no matter where kids turned.</p>"
+    },
+    {
+      "type": "image",
+      "src": "BBY YTD 4.png"
+    },
+    {
+      "type": "image",
+      "src": "BBY YTD 5.png"
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "title": "Credit",
+          "items": ["Geek Squad Branding belongs to Best Buy Canada."]
+        },
+        {
+          "title": "Made With",
+          "items": ["Adobe Illustrator", "Adobe InDesign"]
+        }
+      ]
+    }
+  ]
+}
